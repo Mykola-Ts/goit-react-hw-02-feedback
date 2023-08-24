@@ -5,28 +5,28 @@ export const FeedbackItem = styled.li`
   background-color: transparent;
 
   &:nth-child(1) button {
-    border-color: green;
+    border-color: var(--green-color);
   }
 
   &:nth-child(1) button:is(:hover, :focus) {
-    background-color: green;
+    background-color: var(--green-color);
   }
 
   &:nth-child(2) button {
-    border-color: #f0f037;
+    border-color: var(--yellow-color);
   }
 
   &:nth-child(2) button:is(:hover, :focus) {
     color: currentColor;
-    background-color: #f0f037;
+    background-color: var(--yellow-color);
   }
 
   &:nth-child(3) button {
-    border-color: red;
+    border-color: var(--red-color);
   }
 
   &:nth-child(3) button:is(:hover, :focus) {
-    background-color: red;
+    background-color: var(--red-color);
   }
 `;
 
@@ -41,11 +41,11 @@ export const FeedbackButton = styled.button`
   color: currentColor;
   background-color: transparent;
 
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--transition-duration) var(--transition-timing-function),
+    background-color var(--transition-duration) var(--transition-timing-function);
 
   &:is(:hover, :focus) {
-    color: #fff;
+    color: var(--white-color);
   }
 
   @media screen and (max-width: 767px) {

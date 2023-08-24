@@ -46,22 +46,35 @@ export const GlobalStyle = createGlobalStyle`
   font-display: swap;
 }
 
+:root {
+  --font-family: 'DM Sans', sans-serif;
+
+  --background-color: rgb(228, 228, 228);
+  --text-black-color: #111;
+  --white-color: #fff;
+  --green-color: #008000;
+  --yellow-color: #f0f037;
+  --red-color: #ff0000;
+
+  --box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+  0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+
+  --transition-duration: 250ms;
+  --transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 body {
   margin: 0;
 
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--font-family);
   font-size: 16px;
   font-weight: 400;
   font-style: normal;
   line-height: 1.13;
   letter-spacing: -0.32px;
 
-  background-color: rgb(228, 228, 228);
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  color: var(--text-black-color);
+  background-color: var(--background-color);
 }
 
 h1,
