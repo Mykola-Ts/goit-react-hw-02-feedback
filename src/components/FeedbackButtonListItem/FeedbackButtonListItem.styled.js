@@ -47,4 +47,8 @@ export const FeedbackButton = styled.button`
   &:is(:hover, :focus) {
     color: #fff;
   }
+
+  @media screen and (max-width: 767px) {
+    min-width: 70px;
+  }
 `;
