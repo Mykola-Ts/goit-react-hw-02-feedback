@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const FeedbackItem = styled.li`
   border: none;
+
   background-color: transparent;
 
   &:nth-child(1) button {

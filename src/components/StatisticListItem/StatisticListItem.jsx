@@ -1,5 +1,5 @@
-import { ListItem, ListItemValue } from './StatisticListItem.styled';
 import PropTypes from 'prop-types';
+import { ListItem, ListItemValue } from './StatisticListItem.styled';
 
 export const StatisticListItem = ({ name, value }) => {
   return (

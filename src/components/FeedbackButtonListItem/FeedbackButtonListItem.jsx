@@ -1,22 +1,22 @@
-import { FeedbackItem, FeedbackButton } from './FeedbackButtonListItem.styled';
 import PropTypes from 'prop-types';
+import { BsEmojiSmile, BsEmojiNeutral, BsEmojiFrown } from 'react-icons/bs';
+import { FeedbackItem, FeedbackButton } from './FeedbackButtonListItem.styled';
 
-export const FeedbackButtonListItem = ({
-  buttonText,
-  onLeaveFeedback,
-  icon,
-}) => {
-  const IconButton = icon;
+const iconsButton = {
+  good: BsEmojiSmile,
+  neutral: BsEmojiNeutral,
+  bad: BsEmojiFrown,
+};
+
+export const FeedbackButtonListItem = ({ option, onLeaveFeedback }) => {
+  const IconButton = iconsButton[option];
 
   return (
     <>
       <FeedbackItem>
-        <FeedbackButton
-          id={buttonText}
-          onClick={evt => onLeaveFeedback(evt.currentTarget.id)}
-        >
+        <FeedbackButton option={option} onClick={() => onLeaveFeedback(option)}>
           <IconButton size={20} />
-          {buttonText}
+          {option}
         </FeedbackButton>
       </FeedbackItem>
     </>
@@ -24,7 +24,6 @@ export const FeedbackButtonListItem = ({
 };
 
 FeedbackButtonListItem.propTypes = {
-  buttonText: PropTypes.string.isRequired,
+  option: PropTypes.string.isRequired,
   onLeaveFeedback: PropTypes.func.isRequired,
-  icon: PropTypes.func.isRequired,
 };
