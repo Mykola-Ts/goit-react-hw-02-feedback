@@ -8,11 +8,12 @@ export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
     <>
       <Section title="Please leave feedback">
         <FeedbackButtonList>
-          {options.map(option => (
+          {options.map(({ value, icon }) => (
             <FeedbackButtonListItem
-              key={option}
-              buttonText={option}
+              key={value}
+              buttonText={value}
               onLeaveFeedback={onLeaveFeedback}
+              icon={icon}
             />
           ))}
         </FeedbackButtonList>

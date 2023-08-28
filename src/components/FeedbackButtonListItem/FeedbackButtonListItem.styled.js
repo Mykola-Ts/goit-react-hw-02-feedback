@@ -31,7 +31,12 @@ export const FeedbackItem = styled.li`
 `;
 
 export const FeedbackButton = styled.button`
-  min-width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  min-width: 120px;
   border-radius: 18px;
   border: 2px solid black;
   padding: 8px;
@@ -42,7 +47,8 @@ export const FeedbackButton = styled.button`
   background-color: transparent;
 
   transition: color var(--transition-duration) var(--transition-timing-function),
-    background-color var(--transition-duration) var(--transition-timing-function);
+    background-color var(--transition-duration)
+      var(--transition-timing-function);
 
   &:is(:hover, :focus) {
     color: var(--white-color);
@@ -50,5 +56,11 @@ export const FeedbackButton = styled.button`
 
   @media screen and (max-width: 767px) {
     min-width: 70px;
+  }
+
+  & svg {
+    stroke-width: 0.3;
+
+    overflow: visible;
   }
 `;

@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import { BsEmojiSmile, BsEmojiNeutral, BsEmojiFrown } from 'react-icons/bs';
 import { Layout } from './Layout';
 import { GlobalStyle } from './GlobalStyle';
 import { Statistics } from './Statistics/Statistics';
@@ -28,9 +29,9 @@ export class App extends Component {
     }
   };
 
-  onLeaveFeedback = evt => {
+  onLeaveFeedback = id => {
     this.setState(prevState => {
-      switch (evt.target.id) {
+      switch (id) {
         case 'good':
           return {
             good: prevState.good + 1,
@@ -60,7 +61,11 @@ export class App extends Component {
       <Layout>
         <Wrapper>
           <FeedbackOptions
-            options={['good', 'neutral', 'bad']}
+            options={[
+              { value: 'good', icon: BsEmojiSmile },
+              { value: 'neutral', icon: BsEmojiNeutral },
+              { value: 'bad', icon: BsEmojiFrown },
+            ]}
             onLeaveFeedback={this.onLeaveFeedback}
           />
 
