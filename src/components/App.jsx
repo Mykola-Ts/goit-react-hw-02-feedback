@@ -15,20 +15,16 @@ export class App extends Component {
   };
 
   countTotalFeedback = () => {
-    const values = Object.values(this.state);
-    let total = 0;
-
-    for (const value of values) {
-      total += value;
-    }
-
-    return total;
+    return Object.values(this.state).reduce((prevValue, number) => {
+      return prevValue + number;
+    }, 0);
   };
 
-  countPositiveFeedbackPercentage = ({ countTotalFeedback, state } = this) => {
+  countPositiveFeedbackPercentage = () => {
+    const { countTotalFeedback, state } = this;
     const countTotal = countTotalFeedback();
 
-    return countTotal ? `${Math.round((state.good / countTotal) * 100)}%` : '0';
+    return `${Math.round((state.good / countTotal) * 100) || 0}%`;
   };
 
   onLeaveFeedback = option => {
